@@ -1,19 +1,22 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_main_script"]
 [ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="2_player_scene"]
 [ext_resource type="PackedScene" path="res://scenes/Fruit.tscn" id="3_fruit_scene"]
 [ext_resource type="PackedScene" path="res://scenes/Bomb.tscn" id="4_bomb_scene"]
+[ext_resource type="Texture2D" path="res://assets/fondo.jpg" id="5_fondo"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_main_script")
 escena_fruta = ExtResource("3_fruit_scene")
 escena_bomba = ExtResource("4_bomb_scene")
 
-[node name="Fondo" type="ColorRect" parent="."]
+[node name="Fondo" type="TextureRect" parent="."]
 offset_right = 800.0
 offset_bottom = 600.0
-color = Color(0.85, 0.93, 1, 1)
+texture = ExtResource("5_fondo")
+expand_mode = 1
+stretch_mode = 6
 
 [node name="Player" parent="." instance=ExtResource("2_player_scene")]
 position = Vector2(400, 540)
@@ -27,11 +30,13 @@ process_mode = 3
 [node name="PuntajeLabel" type="Label" parent="UI"]
 offset_left = 20.0
 offset_top = 16.0
-offset_right = 260.0
+offset_right = 460.0
 offset_bottom = 56.0
-theme_override_colors/font_color = Color(0.1, 0.15, 0.25, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
-text = "Puntos: 0 / 10"
+text = "Puntos: 0  |  Récord: 0"
 
 [node name="VidasLabel" type="Label" parent="UI"]
 anchors_preset = 1
@@ -42,9 +47,11 @@ offset_top = 16.0
 offset_right = -20.0
 offset_bottom = 56.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(0.1, 0.15, 0.25, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 24
-text = "Vidas: 3"
+text = "Vidas: 5"
 horizontal_alignment = 2
 
 [node name="PanelFinJuego" type="Panel" parent="UI"]
@@ -54,10 +61,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 90.0
+offset_left = -170.0
+offset_top = -120.0
+offset_right = 170.0
+offset_bottom = 120.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -77,8 +84,10 @@ alignment = 1
 
 [node name="MensajeLabel" type="Label" parent="UI/PanelFinJuego/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "¡Ganaste!"
+theme_override_font_sizes/font_size = 28
+text = "¡Game Over!
+Puntos: 0
+Récord: 0"
 horizontal_alignment = 1
 
 [node name="BotonReiniciar" type="Button" parent="UI/PanelFinJuego/VBoxContainer"]

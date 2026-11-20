@@ -1,11 +1,12 @@
 # Fruit Basket
 
-Videojuego 2D sencillo hecho en **Godot 4** para taller de principiantes. Mueve la canasta de izquierda a derecha para atrapar las frutas que caen y esquivar las bombas.
+Videojuego 2D estilo arcade hecho en **Godot 4** para taller de principiantes. Mueve la canasta de izquierda a derecha para atrapar la mayor cantidad de frutas posible y esquivar las bombas.
 
 ## Objetivo
 
-- **Ganar:** Atrapa **10 frutas**.
-- **Perder:** Comienzas con **3 vidas**; cada bomba que toques te resta 1 vida. Si llegas a 0, termina la partida.
+- **Modo infinito (arcade):** Atrapa tantas frutas como puedas para superar tu **Récord** (se guarda automáticamente).
+- **Vidas:** Comienzas con **5 vidas**; cada bomba que toques te resta 1 vida.
+- **Dificultad progresiva:** Con cada fruta atrapada, los objetos caen más rápido y aparecen con mayor frecuencia.
 
 ## Controles
 

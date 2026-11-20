@@ -10,6 +10,7 @@ extends Node2D
 # Reglas del juego (ajustables desde el Inspector)
 @export var puntaje_meta: int = 10
 @export var vidas_iniciales: int = 3
+@export var tiempo_entre_objetos: float = 1.0
 
 # Variables de estado de la partida actual
 var puntaje: int = 0
@@ -25,6 +26,10 @@ var vidas: int = 3
 
 
 func _ready() -> void:
+	# Configuramos el tiempo entre cada objeto que cae desde el Inspector
+	spawn_timer.wait_time = tiempo_entre_objetos
+	spawn_timer.start()
+
 	# Inicializamos las vidas y ocultamos el panel de fin de juego
 	vidas = vidas_iniciales
 	panel_fin_juego.visible = false

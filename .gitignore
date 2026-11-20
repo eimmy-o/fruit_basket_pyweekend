@@ -1,2 +1,12 @@
+# Archivos generados por Godot 4
 .godot/
+
+# Archivos temporales y de respaldo
 *.tmp
+*~
+*.bak
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
